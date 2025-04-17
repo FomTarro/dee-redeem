@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Dee's Cool Redeem</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./style.css">
-        <title>Dee's Arrow Redeem</title>
     </head>
     <body>
-        <div id="token_controls">
+        <div id="controls">
             <div>
-                <a id="token_link" target="_blank">Get Twitch Token (open this link outside of OBS)</a>
-            </div>
-            <form id="token_form">
-                <input id="token_input" name="token" type="password">
-                <input id="token_submit" type="submit" value="Use This Token">
-            </form>
-            <div>
-                <h2>Welcome, <span id="user_name">...</span></h2>
+                <h2>Welcome, <span id="username">???</span></h2>
             </div>
             <div>
-                <button onclick=listenForRewardId()>Listen for Reward...</button>
-                <h2>Reward Title: <span id="reward_title"></span></h2>
+                
+            </div>
+            <div>
+                <div>
+                    <label for="token-input-form">Token Settings</label>
+                </div>
+                <a target="_blank"  id="token_link">Get Twitch Token (open this link outside of OBS)</a>
+                <form id="token-input-form">
+                    <input id="token-input-field" type="password" name="token" placeholder="Enter Token here...">
+                    <input id="token-input-submit" type="submit" value="Use Token">
+                </form>
+            </div>
+            <div>
+                <div><label>Reward Title: <span id="reward-title">...</span></label></div>
+                <button onclick=listenForRewardId()>Listen for Redeem Reward ID...</button>
+            </div>
+            <div>
+                <div>
+                    <label for="size-slider">Redeem Size</label>
+                </div>
+                <input id="size-slider" type="range" min="0" max="100" value="25"><span id="size-slider-out">25%</span>
+                <div>
+                    <label for="size-slider">Redeem Size Variance</label>
+                </div>
+                <input id="variance-slider" type="range" min="0" max="100" value="2"><span id="variance-slider-out">2%</span>
+            </div>
+            <div>
+                <button onclick=testRedeem()>Test Fire</button>
             </div>
         </div>
-        <div id="reward_space">
-
+        <div id="redeem-area">
+            <div id="redeem-area-inner"></div>
         </div>
+        <template id="redeem-template">
+            <div class="redeem-item">
+                <img class="redeem-img" src="./dee_arrow.png">
+                <span class="redeem-user">Chatter name</span>
+            </div>
+        </template>
     </body>
-    <template id="reward_template">
-        <div class="reward_item">
-            <img class="reward_img">
-            <span class="reward_user">CHATTER NAME</span>
-        </div>
-    </template>
-    <script src="./script.js"></script>
-    <script src="./credentials.js"></script>
+    <footer>
+        <script src="./script.js"></script>
+        <script src="./credentials.js"></script>
+    </footer>
 </html>

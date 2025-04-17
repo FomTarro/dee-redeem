@@ -1,26 +1,89 @@
+@font-face {
+    font-family: 'castal_streetbold';
+    src: url('castal_street_bold-webfont.woff2') format('woff2'),
+         url('castal_street_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-/* TODO: this is overflowing */
-#reward_space {
-    background-color: red;
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-
-.reward_item {
-    display: block;
-    position: absolute;
-    opacity: 0;
-    animation-delay: 1;
-    animation: fadeInOut 8s linear forwards;
-    font-size: 12em;
 }
 
 .hidden {
     display: none !important;
 }
 
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    10%, 90% { opacity: 1;}
+body {
+    margin: 0;
+}
+
+label{
+    font-weight: bold;
+}
+
+h2{
+    margin: 0;
+}
+
+#controls{
+    background-color: whitesmoke;
+    margin: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+#redeem-area{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* background-color: red; */
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#redeem-area-inner{
+    height: 80%;
+    width: 80%;
+    /* background-color: pink; */
+    position: relative;
+}
+
+.redeem-item{
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    animation-delay: 1s;
+    animation: arrowInOut 8s linear forwards;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.redeem-img{
+    position: absolute;
+    /* height: 25vh; */
+    width: auto;
+}
+
+.redeem-user {
+    /* margin-top: 1.5vh; */
+    font-family: "castal_streetbold";
+    /* font-size: 5vh; */
+    position: absolute;
+    color: black;
+    text-shadow:1px 1px 10px #72346A, 1px 1px 10px #72346A;
+    /* text-shadow: -1px -1px 0 #72346A, 1px -1px 0 #72346A, -1px 1px 0 #72346A, 1px 1px 0 #72346A; */
+}
+
+@keyframes arrowInOut {
+    0%,100% {opacity: 0;}
+    10%, 90% {opacity: 1;}
 }
