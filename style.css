@@ -1,0 +1,26 @@
+
+/* TODO: this is overflowing */
+#reward_space {
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.reward_item {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    animation-delay: 1;
+    animation: fadeInOut 8s linear forwards;
+    font-size: 12em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1;}
+}

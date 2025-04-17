@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <title>Dee's Arrow Redeem</title>
+    </head>
+    <body>
+        <div id="token_controls">
+            <div>
+                <a id="token_link" target="_blank">Get Twitch Token (open this link outside of OBS)</a>
+            </div>
+            <form id="token_form">
+                <input id="token_input" name="token" type="password">
+                <input id="token_submit" type="submit" value="Use This Token">
+            </form>
+            <div>
+                <h2>Welcome, <span id="user_name">...</span></h2>
+            </div>
+            <div>
+                <button onclick=listenForRewardId()>Listen for Reward...</button>
+                <h2>Reward Title: <span id="reward_title"></span></h2>
+            </div>
+        </div>
+        <div id="reward_space">
+
+        </div>
+    </body>
+    <template id="reward_template">
+        <div class="reward_item">
+            <img class="reward_img">
+            <span class="reward_user">CHATTER NAME</span>
+        </div>
+    </template>
+    <script src="./script.js"></script>
+    <script src="./credentials.js"></script>
+</html>
